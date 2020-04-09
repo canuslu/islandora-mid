@@ -280,7 +280,7 @@ function islandora_solr_metadata_query_fields($object, &$solr_fields) {
               '!field' => $solr_field,
               '!value' => islandora_solr_facet_escape($original_value),
             ));
-            return l($value, 'islandora/search', array(
+            return l(t($value), 'islandora/search', array(
               "query" => array(
                 "type" => "dismax",
                 "f" => array(
@@ -335,6 +335,12 @@ function islandora_solr_metadata_query_fields($object, &$solr_fields) {
           // Permissions are being enforced and none of our roles are allowed...
           unset($solr_fields[$field['solr_field']]);
         }
+      }
+
+      foreach($solr_fields as $key => $value) {
+          if ($key == "mods_titleInfo_title_all_mt") {
+              $solr_fields[$key]['value'] = array(t(implode(", ", $value['value'])));
+          }
       }
 
       uasort($solr_fields, 'drupal_sort_weight');
