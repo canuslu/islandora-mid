@@ -47,6 +47,10 @@ function islandora_newspaper_batch_drush_command() {
         'description' => 'A flag to cause PDFs to be created in newspaper issues. Page PDF creation is dependant on the configuration within Drupal proper.',
         'value' => 'optional',
       ),
+      'page_progression' => array(
+        'description' => 'A flag to indicate the page progression for the book. If not specified will default to LR.',
+        'value' => 'optional',
+      ),
       'do_not_generate_ocr' => array(
         'description' => 'A flag to disallow conditional OCR generation.',
         'value' => 'optional',
@@ -69,6 +73,10 @@ function islandora_newspaper_batch_drush_command() {
       ),
       'directory_dedup' => array(
         'description' => 'A flag to indicate that we should avoid repreprocessing newspaper issues which are located in directories.',
+      ),
+      'output_set_id' => array(
+        'description' => 'A flag to indicate whether to print the set ID of the preprocessed book.',
+        'value' => 'optional',
       ),
     ),
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
@@ -114,6 +122,7 @@ function drush_islandora_newspaper_batch_preprocess() {
     'email_admin' => drush_get_option('email_admin', FALSE),
     'wait_for_metadata' => drush_get_option('wait_for_metadata', FALSE),
     'directory_dedup' => drush_get_option('directory_dedup', FALSE),
+    'page_progression' => drush_get_option('page_progression', FALSE),
   );
 
   if ($content_models = drush_get_option('content_models', FALSE)) {
@@ -132,6 +141,11 @@ function drush_islandora_newspaper_batch_preprocess() {
 
   // Pass the preprocessor off to run.
   $preprocessed = islandora_batch_handle_preprocessor($preprocessor);
+
+  if (drush_get_option('output_set_id', FALSE)) {
+      drush_print($preprocessor->getSetId());
+  }
+
 }
 
 /**
