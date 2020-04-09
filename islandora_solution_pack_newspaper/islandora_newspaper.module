@@ -431,7 +431,7 @@ function islandora_newspaper_islandora_newspaperpagecmodel_islandora_solr_object
 function islandora_newspaper_islandora_newspaperissuecmodel_islandora_solr_object_result_alter(&$search_results, $query_processor) {
   module_load_include('inc', 'islandora', 'includes/solution_packs');
   if (islandora_get_viewer_id('islandora_newspaper_issue_viewers') == 'islandora_internet_archive_bookreader' &&
-    ($query_processor->solrDefType == 'dismax' || $query_processor->solrDefType == 'edismax')) {
+    ($query_processor->solrDefType == 'dismax' || $query_processor->solrDefType == 'edismax' || $query_processor->solrDefType == '')) {
     $view_types = array(
       "1" => "1up",
       "2" => "2up",
