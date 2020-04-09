@@ -1744,6 +1744,14 @@ function islandora_datastream_access($op, $datastream, $user = NULL) {
     global $user;
   }
 
+  if ($datastream->id == "HOCR" || $datastream->id == "OCR") {
+    if (in_array('administrator', $user->roles)) {
+      echo "";
+    } else {
+      drupal_not_found();
+    }
+  }
+
   // Populate the cache on a miss.
   if (!isset($cache[$op][$datastream->parent->id][$datastream->id][$user->uid])) {
     module_load_include('inc', 'islandora', 'includes/utilities');
