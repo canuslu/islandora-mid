@@ -32,6 +32,14 @@ function islandora_openseadragon_menu() {
       'file' => 'includes/download.clip.inc',
       'load arguments' => array(2),
     ),
+    'zoom-islandora-object/%islandora_object' => array(
+      'page callback' => 'zoom_islandora_object',
+      'page arguments' => array(1),
+      'access callback' => 'islandora_object_access',
+      'access arguments' => array(ISLANDORA_VIEW_OBJECTS, 1),
+      'file' => 'includes/zoom.inc',
+      'type' => MENU_CALLBACK,
+    ),
   );
 }
 
