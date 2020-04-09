@@ -1,0 +1,9 @@
+name = "Islandora Internet Archive BookReader"
+description = "Implements the Internet Archive BookReader for use with Islandora."
+package = Islandora Viewers
+dependencies[] = libraries
+dependencies[] = islandora_paged_content
+dependencies[] = colorbox
+dependencies[] = token
+version = 7.x-1.13
+core = 7.x
