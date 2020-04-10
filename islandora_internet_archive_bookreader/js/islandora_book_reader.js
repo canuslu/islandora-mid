@@ -739,7 +739,7 @@ IslandoraBookReader.prototype.blankFulltextDiv = function() {
     this.removeSearchResults();
     this.searchResults = results;
     if (0 == results.matches.length) {
-      var errStr  = Drupal.t('No matches were found.');
+      var errStr  = Drupal.t('No full-text matches were found.');
       var timeout = 1000;
       if (false === results.indexed) {
         errStr  = "<p>" + Drupal.t("This @content_type hasn't been indexed for searching yet. We've just started indexing it, so search should be available soon. Please try again later. Thanks!", {'@content_type': this.content_type}) + "</p>";
