@@ -70,6 +70,13 @@ function islandora_solr_get_fields($field_type = NULL, $filter = TRUE, $simplifi
       $records[$field['solr_field']] = $field;
     }
   }
+
+  foreach($records as $key => $value) {
+    if (gettype($value) == "string") {
+        $records[$key] = t($value);
+    }
+  }
+
   return $records;
 }
 

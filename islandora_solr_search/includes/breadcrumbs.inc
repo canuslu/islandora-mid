@@ -70,6 +70,16 @@ function islandora_solr_get_breadcrumbs_recursive($pid, array &$context = NULL) 
     if ($parents) {
       $this_label = $parents['label'];
       $parent = $parents['PID'];
+
+      $islandora_solr_query = new IslandoraSolrQueryProcessor();
+      $query = 'PID:"' . $parents['PID'] . '"';
+      $islandora_solr_query->buildQuery($query);
+      $islandora_solr_query->solrParams['fl'] = "mods_titleInfo_title_all_mt";
+      $islandora_solr_query->solrParams['fq'] = "";
+      $islandora_solr_query->executeQuery(FALSE);
+      $response = $islandora_solr_query->islandoraSolrResult;
+      $titles = $response['response']['objects'][0]['solr_doc']['mods_titleInfo_title_all_mt'];
+      $title_merged = t(implode(", ", $titles));
     }
     if (empty($this_label)) {
       $this_label = t('-');
@@ -108,7 +118,7 @@ function islandora_solr_get_breadcrumb_parent($pid) {
   ));
   $parent_fields = preg_split("/\\r\\n|\\n|\\r/", variable_get('islandora_solr_breadcrumbs_parent_fields', "RELS_EXT_isMemberOfCollection_uri_ms\r\nRELS_EXT_isMemberOf_uri_ms"), -1, PREG_SPLIT_NO_EMPTY);
   $solr_params = array(
-    'fl' => implode(",", $parent_fields) . ',fgs_label_s,PID',
+    'fl' => implode(",", $parent_fields) . ',mods_titleInfo_title_all_mt,PID',
     'hl' => 'false',
     'facet' => 'false',
   );
@@ -147,7 +157,7 @@ function islandora_solr_get_breadcrumb_parent($pid) {
         $parent_pid = str_replace("info:fedora/", "", $parent_pid);
         return array(
           'PID' => $parent_pid,
-          'label' => $find_solr_value($results[0], 'fgs_label_s'),
+          'label' => t(implode(", ", $results[0]['solr_doc']['mods_titleInfo_title_all_mt'])),
         );
       }
     }

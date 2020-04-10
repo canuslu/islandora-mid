@@ -70,13 +70,15 @@ function template_preprocess_islandora_solr(&$variables) {
     $image_params = array(
       'path' => $path,
     );
+    preg_match_all('/<a .*?>(.*?)<\/a>/', $result['solr_doc']['mods_titleInfo_title_all_mt']['value'], $matches);
+    $title_info = $matches[1][0];
     if (isset($result['object_label'])) {
-      $image_params['alt'] = $result['object_label'];
+      $image_params['alt'] = t($title_info);
     }
     $image = theme('image', $image_params);
     $options = array('html' => TRUE);
     if (isset($result['object_label'])) {
-      $options['attributes']['title'] = $result['object_label'];
+      $options['attributes']['title'] = t($title_info);
     }
     if (isset($result['object_url_params'])) {
       $options['query'] = $result['object_url_params'];
@@ -113,7 +115,7 @@ function template_preprocess_islandora_solr_facet(&$variables) {
  */
 function theme_islandora_solr_facet_wrapper($variables) {
   $output = '<div class="islandora-solr-facet-wrapper">';
-  $output .= '<h3>' . $variables['title'] . '</h3>';
+  $output .= '<h3>' . t($variables['title']) . '</h3>';
   $output .= $variables['content'];
   $output .= '</div>';
   return $output;

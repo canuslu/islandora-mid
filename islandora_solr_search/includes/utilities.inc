@@ -319,8 +319,9 @@ function islandora_solr_prepare_solr_results($solr_results) {
     $pid = $object_result['PID'];
     $rows = array();
     $options = array('html' => TRUE);
+    $title_info = implode(", ", $object_result['solr_doc']['mods_titleInfo_title_all_mt']);
     if (isset($object_result['object_label'])) {
-      $options['attributes']['title'] = $object_result['object_label'];
+      $options['attributes']['title'] = t($title_info);
     }
     if (isset($object_result['object_url_params'])) {
       $options['query'] = $object_result['object_url_params'];
@@ -331,6 +332,7 @@ function islandora_solr_prepare_solr_results($solr_results) {
 
     foreach ($solr_doc as $field => $original_value) {
       $value = (array) $original_value;
+      $value = t(implode(", ", $value));
 
       // If value is truncated, use the truncated value separator.
       if (array_key_exists($field, $truncate_length)) {
@@ -358,7 +360,16 @@ function islandora_solr_prepare_solr_results($solr_results) {
       // Only apply highlighting when the date isn't formatted.
       elseif (isset($highlighting[$pid][$field])) {
         $value = $highlighting[$pid][$field];
+        $value_merged = implode(", ", $value);
+        $open_tag = $solr_results['responseHeader']['params']['hl.simple.pre'];
+        if (substr($value_merged, 0, strlen($open_tag)) === $open_tag) {
+            $close_tag = $solr_results['responseHeader']['params']['hl.simple.post'];
+            $value_raw = str_replace($open_tag, "", $value_merged);
+            $value_raw = str_replace($close_tag, "", $value_raw);
+            $value = array($open_tag . t($value_raw) . $close_tag);
+        }
       }
+      $value = array(t(implode(", ", $value)));
       // Replace PID with Object Label.
       if (in_array($field, $replace_pid_with_label)) {
         $query_processor = new IslandoraSolrQueryProcessor();

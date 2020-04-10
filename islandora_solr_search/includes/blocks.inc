@@ -529,7 +529,7 @@ function islandora_solr_simple_search_form_submit($form, &$form_state) {
   module_load_include('inc', 'islandora_solr', 'includes/utilities');
   $search_string = islandora_solr_replace_slashes($form_state['values']['islandora_simple_search_query']);
 
-  $query = array('type' => 'dismax');
+  $query = array('type' => 'edismax');
 
   $form_state['redirect'] = array(
     ISLANDORA_SOLR_SEARCH_PATH . "/$search_string",
@@ -708,9 +708,9 @@ function islandora_solr_advanced_search_form($form, &$form_state) {
           '#title_display' => 'invisible',
           '#default_value' => isset($value['boolean']) ? $value['boolean'] : 'AND',
           '#options' => array(
-            'AND' => 'AND',
-            'OR' => 'OR',
-            'NOT' => 'NOT',
+            'AND' => t('AND'),
+            'OR' => t('OR'),
+            'NOT' => t('NOT'),
           ),
         );
       }
@@ -1010,7 +1010,7 @@ function islandora_solr_sort() {
         $attr['class'] = array('active');
       }
       $attr['rel'] = 'nofollow';
-      $attr['title'] = $label;
+      $attr['title'] = t($label);
       $attr['href'] = url($path, array('query' => $query));
 
       $hooks = islandora_build_hook_list(ISLANDORA_SOLR_FACET_BUCKET_CLASSES_HOOK_BASE);
@@ -1018,7 +1018,7 @@ function islandora_solr_sort() {
 
       // XXX: We're not using l() because of
       // @link http://drupal.org/node/41595 active classes. @endlink
-      $item = '<a' . drupal_attributes($attr) . '>' . $label . ' ' . $indicator . '</a>';
+      $item = '<a' . drupal_attributes($attr) . '>' . t($label) . ' ' . $indicator . '</a>';
 
       // Add link to list.
       $list_items[] = $item;
@@ -1166,9 +1166,9 @@ function islandora_solr_search_navigation() {
       'return_link' => $return_link,
       'return_text' => t('Return to search'),
       'prev_link' => $prev_link,
-      'prev_text' => t('Previous Object'),
+      'prev_text' => t('Previous Result'),
       'next_link' => $next_link,
-      'next_text' => t('Next Object'),
+      'next_text' => t('Next Result'),
     ));
   }
   return $return;
