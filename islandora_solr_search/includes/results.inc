@@ -1092,8 +1092,8 @@ class IslandoraSolrFacets {
       // Create link.
       $link['link'] = '<a' . drupal_attributes($attributes['link']['attr']) . '>' . $bucket . '</a>';
       $link['count'] = $count;
-      $link['link_plus'] = '<a' . drupal_attributes($attributes['plus']['attr']) . '>+</a>';
-      $link['link_minus'] = '<a' . drupal_attributes($attributes['minus']['attr']) . '>-</a>';
+      $link['link_plus'] = '<a' . drupal_attributes($attributes['plus']['attr']) . '><i class="fas fa-plus-square"></i></a>';
+      $link['link_minus'] = '<a' . drupal_attributes($attributes['minus']['attr']) . '><i class="fas fa-minus-square"></i></a>';
       $buckets[] = $link;
     }
 
