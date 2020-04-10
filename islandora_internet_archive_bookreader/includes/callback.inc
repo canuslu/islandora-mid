@@ -65,6 +65,15 @@ function islandora_internet_archive_bookreader_search_callback($object_id, $term
     drupal_exit();
   }
 
+  function is_ocr_t($x) {
+      if(mb_strpos($x, ":") && mb_split(":", $x)[0] == "OCR_t") return true;
+      if(!mb_strpos($x, ":") && !($x == "AND" || $x == "OR" )) return true;
+      return false;
+  }
+
+  $term_split = mb_split("\s", $term);
+  $term = implode(" ", array_filter($term_split, "is_ocr_t"));
+
   $results = islandora_paged_content_perform_solr_highlighting_query($term, array(
     'fq' => array(format_string('!field:("info:fedora/!value" OR "!value")', array(
       '!field' => variable_get('islandora_internet_archive_bookreader_ocr_filter_field', 'RELS_EXT_isMemberOf_uri_ms'),
@@ -72,7 +81,7 @@ function islandora_internet_archive_bookreader_search_callback($object_id, $term
     ))),
     'hl.tag.pre' => '{{{',
     'hl.tag.post' => '}}}',
-    'defType' => 'dismax',
+    'defType' => 'edismax',
   ));
   $results = islandora_internet_archive_bookreader_remap_highlighting_for_bookreader_results($results);
   drupal_json_output($results);
