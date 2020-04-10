@@ -770,6 +770,11 @@ IslandoraBookReader.prototype.blankFulltextDiv = function() {
     }
     this.updateSearchHilites();
     this.removeProgressPopup();
+
+    var pageIndexMin = Math.min.apply(null, arr);
+    this.jumpToIndex(pageIndexMin);
+
+    Drupal.settings.islandoraInternetArchiveBookReader.searchResults = results.matches;
   }
 
   /**
