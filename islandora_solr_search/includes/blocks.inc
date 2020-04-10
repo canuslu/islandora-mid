@@ -471,7 +471,36 @@ function islandora_solr_simple_search_form($form, &$form_state) {
 
   $title_label = variable_get('islandora_solr_simple_search_label_title', 'Search Term');
 
+  $form['simple']["simple_holder"] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+        'class' => array(
+            'simple-holder'
+        )
+    )
+  );
+
+  $form['simple']['simple_holder']['input_div'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'simple-holder-input-div'
+      )
+    )
+
+  );
+
+  $form['simple']['simple_holder']['submit_div'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'simple-holder-submit-div'
+      )
+    )
+  );
+
   $form['simple']["islandora_simple_search_query"] = array(
+    '#prefix' => '<a href="#" class="on-screen-keyboard-trigger" onclick="keyboardTrigger($(this));"><i class="fas fa-keyboard"></i></a><a href="#" class="search-help-trigger" data-toggle="modal" data-target="#search-help"><i class="fas fa-question-circle"></i></a>',
     '#size' => '15',
     '#type' => 'textfield',
     '#title' => check_plain($title_label),
@@ -479,10 +508,12 @@ function islandora_solr_simple_search_form($form, &$form_state) {
     // @todo Should this be the searched value?
     '#default_value' => '',
   );
-  $form['simple']['submit'] = array(
+
+  $form['simple']['simple_holder']['submit_div']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Search'),
+    '#value' => t("search") . " <img src='/sites/all/themes/miletos_muteferriqa/images/mim-small.png' class='submit-button-image'/>",
   );
+
   return $form;
 }
 
