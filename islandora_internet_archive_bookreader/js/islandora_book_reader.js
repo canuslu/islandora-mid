@@ -202,6 +202,16 @@
       }
       var self = this;
 
+      $(".menu-right-detail").append(
+      "<div id='BRtoolbar'>"
+        +   "<span id='BRtoolbarbuttons'>"
+        +     "<form  id='booksearch'><a href='#' class='on-screen-keyboard-trigger' onclick='keyboardTrigger($(this));'><i class='fas fa-keyboard'></i></a><a href='#' class='search-help-trigger' data-toggle='modal' data-target='#search-help'><i class='fas fa-question-circle'></i></a><input type='search' id='textSrch' name='textSrch' val='' placeholder='"
+        +     Drupal.t('Search inside item')
+        +     "'/><button type='submit' class='btn btn-primary' id='btnSrch' name='btnSrch'>" + Drupal.t('SEARCH') + "</button></form>"
+        +   "</span>"
+        + "</div>"
+      );
+
       $("#BookReader").append(this.buildToolbarElement());
 
       // Add Mobile navigation
