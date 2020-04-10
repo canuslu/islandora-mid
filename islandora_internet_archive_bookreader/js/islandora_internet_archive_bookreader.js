@@ -36,7 +36,11 @@
           bookReader.goFullScreen();
           bookReader.switchMode(1);
         }
+        window.jumpToIndex = function(idx) {
+          bookReader.jumpToIndex(idx);
+        }
       });
     }
+
   };
 })(jQuery);
