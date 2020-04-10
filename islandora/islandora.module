@@ -1142,10 +1142,13 @@ function islandora_drupal_title(AbstractObject $object) {
   $islandora_solr_query->solrParams['fq'] = "";
   $islandora_solr_query->executeQuery(FALSE);
   $response = $islandora_solr_query->islandoraSolrResult;
-  $titles = $response['response']['objects'][0]['solr_doc']['mods_titleInfo_title_all_mt'];
-  $title_merged = t(implode(", ", $titles));
-
-  return $title_merged;
+  if (array_key_exists('mods_titleInfo_title_all_mt', $response['response']['objects'][0]['solr_doc'])) {
+    $titles = $response['response']['objects'][0]['solr_doc']['mods_titleInfo_title_all_mt'];
+    $title_merged = t(implode(", ", $titles));
+    return $title_merged;
+  } else {
+    return $object->label;
+  }
 }
 
 /**
