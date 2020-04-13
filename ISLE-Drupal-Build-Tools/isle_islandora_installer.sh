@@ -143,6 +143,8 @@ drush -y -u 1 en webform_bonus
 drush -y -u 1 en islandora_webform
 drush -y -u 1 en islandora_webform_ingest
 
+drush dl-mobile-detect
+
 drush -y -u 1 en advanced_help
 drush -y -u 1 en better_exposed_filters
 drush -y -u 1 en block_class
@@ -203,6 +205,10 @@ drush openseadragon-plugin
 drush videojs-plugin
 drush pdfjs-plugin
 drush iabookreader-plugin
+
+cp /mid-themes/* /var/www/html/sites/all/themes/contrib/
+drush vset theme_default miletos_muteferriqa 
+
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
 echo "Rerunning drush vset to ensure that Ghostscript works for the PDF DERIVATIVE SETTINGS"
 drush -u 1 -y vset islandora_paged_content_gs "/usr/bin/gs"
