@@ -83,6 +83,19 @@ projects[islandora_videojs][download][url] = "https://github.com/Islandora/islan
 ; projects[islandora_solution_pack_oralhistories][download][url] = "https://github.com/Islandora-Labs/islandora_solution_pack_oralhistories.git"
 ;   projects[islandora_solution_pack_oralhistories][download][branch] = "7.x"
 
+; Extra Islandora Modules
+
+projects[islandora_access_override][download][url] = "https://github.com/discoverygarden/islandora_access_override.git"
+  projects[islandora_access_override][download][branch] = "7.x"
+projects[islandora_bulk_delete][download][url] = "https://github.com/mjordan/islandora_bulk_delete.git"
+  projects[islandora_bulk_delete][download][branch] = "7.x"
+projects[islandora_datastream_crud][download][url] = "https://github.com/SFULibrary/islandora_datastream_crud.git"
+  projects[islandora_datastream_crud][download][branch] = "7.x"
+projects[islandora_entity_bridge][download][url] = "https://github.com/btmash/islandora_entity_bridge.git"
+  projects[islandora_entity_bridge][download][branch] = "7.x-1.x"
+projects[islandora_social_metatags][download][url] = "https://github.com/Islandora-Labs/islandora_social_metatags.git"
+  projects[islandora_social_metatags][download][branch] = "master"
+
 ; Libraries
 
 libraries[tuque][download][type] = "git"

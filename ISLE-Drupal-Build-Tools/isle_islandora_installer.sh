@@ -142,6 +142,63 @@ drush -y -u 1 en webform_ajax
 drush -y -u 1 en webform_bonus
 drush -y -u 1 en islandora_webform
 drush -y -u 1 en islandora_webform_ingest
+
+drush -y -u 1 en advanced_help
+drush -y -u 1 en better_exposed_filters
+drush -y -u 1 en block_class
+drush -y -u 1 en bootstrap
+drush -y -u 1 en browscap
+drush -y -u 1 en captcha
+drush -y -u 1 en checklistapi
+drush -y -u 1 en coder
+drush -y -u 1 en context
+drush -y -u 1 en css_injector
+drush -y -u 1 en filter_harmonizer
+drush -y -u 1 en flag
+drush -y -u 1 en flood_control
+drush -y -u 1 en fontawesome
+drush -y -u 1 en ga_login
+drush -y -u 1 en ga_tokenizer
+drush -y -u 1 en google_analytics_reports
+drush -y -u 1 en i18n
+drush -y -u 1 en login_security
+drush -y -u 1 en menu_item_visibility
+drush -y -u 1 en menu_token
+drush -y -u 1 en metatag
+drush -y -u 1 en metatags_quick
+drush -y -u 1 en mobile_detect
+drush -y -u 1 en mobile_switch
+drush -y -u 1 en module_filter
+drush -y -u 1 en pages
+drush -y -u 1 en paranoia
+drush -y -u 1 en password_policy
+drush -y -u 1 en pm_existing_pages
+drush -y -u 1 en recaptcha
+drush -y -u 1 en registry_autoload
+drush -y -u 1 en search_autocomplete
+drush -y -u 1 en seckit
+drush -y -u 1 en security_review
+drush -y -u 1 en seo_checker
+drush -y -u 1 en seo_checklist
+drush -y -u 1 en site_verify
+drush -y -u 1 en smtp
+drush -y -u 1 en tfa
+drush -y -u 1 en themekey
+drush -y -u 1 en translation_helpers
+drush -y -u 1 en transliteration
+drush -y -u 1 en username_enumeration_prevention
+drush -y -u 1 en uuid
+drush -y -u 1 en variable
+drush -y -u 1 en views_conditional
+drush -y -u 1 en views_datasource
+drush -y -u 1 en views_dependent_filters
+
+drush -y -u 1 en islandora_access_override
+drush -y -u 1 en islandora_bulk_delete
+drush -y -u 1 en islandora_datastream_crud
+drush -y -u 1 en islandora_entity_bridge
+drush -y -u 1 en islandora_social_metatags
+
 drush openseadragon-plugin
 drush videojs-plugin
 drush pdfjs-plugin
