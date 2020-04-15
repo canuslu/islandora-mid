@@ -142,10 +142,74 @@ drush -y -u 1 en webform_ajax
 drush -y -u 1 en webform_bonus
 drush -y -u 1 en islandora_webform
 drush -y -u 1 en islandora_webform_ingest
+drush -y -u 1 en advanced_help
+drush -y -u 1 en better_exposed_filters
+drush -y -u 1 en block_class
+drush -y -u 1 en bootstrap
+drush -y -u 1 en browscap
+drush -y -u 1 en captcha
+drush -y -u 1 en checklistapi
+drush -y -u 1 en context
+drush -y -u 1 en css_injector
+drush -y -u 1 en filter_harmonizer
+drush -y -u 1 en flag
+drush -y -u 1 en flood_control
+drush -y -u 1 en fontawesome
+drush -y -u 1 en ga_login
+drush -y -u 1 en ga_tokenizer
+drush -y -u 1 en google_analytics_reports
+drush -y -u 1 en i18n
+drush -y -u 1 en login_security
+drush -y -u 1 en menu_item_visibility
+drush -y -u 1 en menu_token
+drush -y -u 1 en metatag
+drush -y -u 1 en metatags_quick
+drush -y -u 1 en mobile_detect
+drush dl-mobile-detect
+drush -y -u 1 en mobile_switch
+drush -y -u 1 en module_filter
+drush -y -u 1 en pages
+drush -y -u 1 en paranoia
+drush -y -u 1 en password_policy
+drush -y -u 1 en pm_existing_pages
+drush -y -u 1 en recaptcha
+drush -y -u 1 en registry_autoload
+drush -y -u 1 en search_autocomplete
+drush -y -u 1 en seckit
+drush -y -u 1 en security_review
+drush -y -u 1 en seo_checker
+drush -y -u 1 en seo_checklist
+drush -y -u 1 en site_verify
+drush -y -u 1 en smtp
+drush -y -u 1 en tfa
+drush -y -u 1 en themekey
+drush -y -u 1 en translation_helpers
+drush -y -u 1 en transliteration
+drush -y -u 1 en username_enumeration_prevention
+drush -y -u 1 en variable
+drush -y -u 1 en views_conditional
+drush -y -u 1 en views_dependent_filters
+
+drush -y -u 1 en islandora_access_override
+drush -y -u 1 en islandora_bulk_delete
+drush -y -u 1 en islandora_datastream_crud
+drush -y -u 1 en islandora_entity_bridge
+drush -y -u 1 en islandora_social_metatags
+
 drush openseadragon-plugin
 drush videojs-plugin
 drush pdfjs-plugin
 drush iabookreader-plugin
+
+echo "Get Miletos themes, enable them and set as default"
+cp -r /mid-themes/* /var/www/html/sites/all/themes/
+
+echo "Clean caches to enable themes."
+drush cc all
+drush theme-enable miletos_muteferriqa
+drush theme-enable miletos_muteferriqa_mobile
+drush theme-set-default miletos_muteferriqa 
+
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
 echo "Rerunning drush vset to ensure that Ghostscript works for the PDF DERIVATIVE SETTINGS"
 drush -u 1 -y vset islandora_paged_content_gs "/usr/bin/gs"
@@ -154,7 +218,7 @@ echo "Re-running the islandora_video_mp4_audio_codec vset!"
 drush @sites -u 1 -y vset islandora_video_mp4_audio_codec "aac"
 
 echo "Installing new citeproc v2 library for Islandora scholar"
-cd /var/www/html/sites/all/modules/islandora/islandora_scholar/modules/citeproc || exit
+cd /var/www/html/sites/all/modules/islandora_scholar/modules/citeproc || exit
 
 composer install
 

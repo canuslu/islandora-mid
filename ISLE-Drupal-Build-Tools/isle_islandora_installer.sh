@@ -204,6 +204,9 @@ drush iabookreader-plugin
 
 echo "Get Miletos themes, enable them and set as default"
 cp -r /mid-themes/* /var/www/html/sites/all/themes/
+
+echo "Clean caches to enable themes."
+drush cc all
 drush theme-enable miletos_muteferriqa
 drush theme-enable miletos_muteferriqa_mobile
 drush theme-set-default miletos_muteferriqa 
