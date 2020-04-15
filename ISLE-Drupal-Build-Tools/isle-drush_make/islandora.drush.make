@@ -14,7 +14,6 @@ defaults[projects][type] = "module"
 defaults[projects][download][type] = "git"
 defaults[projects][download][branch]  = "7.x-1.13"
 defaults[projects][download][overwrite] = TRUE
-defaults[projects][subdir] = islandora
 
 projects[islandora][download][url] = "https://github.com/canuslu/islandora.git"
 projects[islandora_bagit][download][url] = "https://github.com/Islandora/islandora_bagit.git"

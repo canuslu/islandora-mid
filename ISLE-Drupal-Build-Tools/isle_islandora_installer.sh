@@ -142,9 +142,6 @@ drush -y -u 1 en webform_ajax
 drush -y -u 1 en webform_bonus
 drush -y -u 1 en islandora_webform
 drush -y -u 1 en islandora_webform_ingest
-
-drush dl-mobile-detect
-
 drush -y -u 1 en advanced_help
 drush -y -u 1 en better_exposed_filters
 drush -y -u 1 en block_class
@@ -152,7 +149,6 @@ drush -y -u 1 en bootstrap
 drush -y -u 1 en browscap
 drush -y -u 1 en captcha
 drush -y -u 1 en checklistapi
-drush -y -u 1 en coder
 drush -y -u 1 en context
 drush -y -u 1 en css_injector
 drush -y -u 1 en filter_harmonizer
@@ -169,6 +165,7 @@ drush -y -u 1 en menu_token
 drush -y -u 1 en metatag
 drush -y -u 1 en metatags_quick
 drush -y -u 1 en mobile_detect
+drush dl-mobile-detect
 drush -y -u 1 en mobile_switch
 drush -y -u 1 en module_filter
 drush -y -u 1 en pages
@@ -189,10 +186,8 @@ drush -y -u 1 en themekey
 drush -y -u 1 en translation_helpers
 drush -y -u 1 en transliteration
 drush -y -u 1 en username_enumeration_prevention
-drush -y -u 1 en uuid
 drush -y -u 1 en variable
 drush -y -u 1 en views_conditional
-drush -y -u 1 en views_datasource
 drush -y -u 1 en views_dependent_filters
 
 drush -y -u 1 en islandora_access_override
@@ -206,8 +201,11 @@ drush videojs-plugin
 drush pdfjs-plugin
 drush iabookreader-plugin
 
-cp /mid-themes/* /var/www/html/sites/all/themes/contrib/
-drush vset theme_default miletos_muteferriqa 
+echo "Get Miletos themes, enable them and set as default"
+cp -r /mid-themes/* /var/www/html/sites/all/themes/
+drush theme-enable miletos_muteferriqa
+drush theme-enable miletos_muteferriqa_mobile
+drush theme-set-default miletos_muteferriqa 
 
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
 echo "Rerunning drush vset to ensure that Ghostscript works for the PDF DERIVATIVE SETTINGS"
