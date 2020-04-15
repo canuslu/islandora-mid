@@ -206,10 +206,12 @@ echo "Get Miletos themes, enable them and set as default"
 cp -r /mid-themes/* /var/www/html/sites/all/themes/
 
 echo "Clean caches to enable themes."
+cd /var/www/html/sites/all/themes
 drush cc all
-drush theme-enable miletos_muteferriqa
-drush theme-enable miletos_muteferriqa_mobile
-drush theme-set-default miletos_muteferriqa 
+drush pm-enable miletos_muteferriqa
+drush pm-enable miletos_muteferriqa_mobile
+drush vset theme_default miletos_muteferriqa
+cd -
 
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
 echo "Rerunning drush vset to ensure that Ghostscript works for the PDF DERIVATIVE SETTINGS"
