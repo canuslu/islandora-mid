@@ -79,23 +79,23 @@ sleep 10s #wait 10 seconds
 drush -y -u 1 en objective_forms
 drush -y -u 1 en islandora_solr
 drush -y -u 1 en islandora_solr_metadata
-#drush -y -u 1 en islandora_solr_facet_pages
+drush -y -u 1 en islandora_solr_facet_pages
 drush -y -u 1 en islandora_solr_views
 drush -y -u 1 en islandora_pdf
-#drush -y -u 1 en islandora_audio
+drush -y -u 1 en islandora_audio
 drush -y -u 1 en islandora_book
 drush -y -u 1 en islandora_compound_object
-#drush -y -u 1 en islandora_disk_image
-#drush -y -u 1 en islandora_entities
-#drush -y -u 1 en islandora_entities_csv_import
+drush -y -u 1 en islandora_disk_image
+drush -y -u 1 en islandora_entities
+drush -y -u 1 en islandora_entities_csv_import
 drush -y -u 1 en islandora_basic_image
 drush -y -u 1 en islandora_large_image
 drush -y -u 1 en islandora_newspaper
-#drush -y -u 1 en islandora_video
-#drush -y -u 1 en islandora_web_archive
-#drush -y -u 1 en islandora_premis
-#drush -y -u 1 en islandora_checksum
-#drush -y -u 1 en islandora_checksum_checker
+drush -y -u 1 en islandora_video
+drush -y -u 1 en islandora_web_archive
+drush -y -u 1 en islandora_premis
+drush -y -u 1 en islandora_checksum
+drush -y -u 1 en islandora_checksum_checker
 drush -y -u 1 en islandora_book_batch
 drush -y -u 1 en islandora_pathauto
 drush -y -u 1 en islandora_pdfjs
@@ -108,9 +108,9 @@ drush -y -u 1 en xml_form_api
 drush -y -u 1 en jquery_update
 drush -y -u 1 en zip_importer
 drush -y -u 1 en islandora_basic_image
-#drush -y -u 1 en islandora_bibliography
+drush -y -u 1 en islandora_bibliography
 drush -y -u 1 en islandora_compound_object
-#drush -y -u 1 en islandora_scholar
+drush -y -u 1 en islandora_scholar
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en citation_exporter
 drush -y -u 1 en doi_importer
@@ -134,7 +134,7 @@ drush -y -u 1 en islandora_batch_report
 drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
 drush -y -u 1 en islandora_altmetrics
-#drush -y -u 1 en islandora_populator
+drush -y -u 1 en islandora_populator
 drush -y -u 1 en islandora_newspaper_batch
 drush -y -u 1 en islandora_openseadragon
 drush -y -u 1 en views_ui
@@ -216,7 +216,7 @@ echo "Re-running the islandora_video_mp4_audio_codec vset!"
 drush @sites -u 1 -y vset islandora_video_mp4_audio_codec "aac"
 
 echo "Installing new citeproc v2 library for Islandora scholar"
-cd /var/www/html/sites/all/modules/islandora/islandora_scholar/modules/citeproc || exit
+cd /var/www/html/sites/all/modules/islandora_scholar/modules/citeproc || exit
 
 composer install
 
