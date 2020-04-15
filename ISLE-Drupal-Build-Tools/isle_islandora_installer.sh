@@ -210,7 +210,9 @@ cd /var/www/html/sites/all/themes
 drush cc all
 drush pm-enable miletos_muteferriqa
 drush pm-enable miletos_muteferriqa_mobile
-drush vset theme_default miletos_muteferriqa
+drush -u 1 -y vset theme_default miletos_muteferriqa
+drush -u 1 -y vset --format=json theme_miletos_muteferriqa_settings '{"bootstrap_cdn_jsdelivr_theme": "paper"}'
+drush -u 1 -y vset container_class container-fluid
 cd -
 
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
