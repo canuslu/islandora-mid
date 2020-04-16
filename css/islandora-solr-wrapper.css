@@ -1,0 +1,58 @@
+/*
+ * CSS file for islandora-solr-wrapper.tpl.php
+ */
+#islandora-solr-search-results {
+    width: 100%;
+}
+
+.islandora-solr-results hr {
+    margin-top: 0 !important;
+}
+
+.islandora-solr-pager-wrapper .pagination {
+    margin-bottom: 0 !important;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.islandora-solr-pager-wrapper {
+    height: 83px;
+}
+
+#islandora-solr-result-count {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.islandora-solr-pager-wrapper li span,
+.islandora-solr-pager-wrapper li a {
+    border-radius: 0 !important;
+}
+
+#islandora-solr-facets-wrapper {
+    padding-right: 30px;
+}
+
+#islandora-solr-sort-wrapper {
+    padding-left: 30px;
+}
+
+#edit-range-slider-submit {
+    width: 90px;
+    margin-left: calc(100% - 90px);
+}
+
+.pagination li a {
+    padding: 6px !important;
+}
+
+.islandora-solr-facet {
+    list-style: none;
+}
+
+.islandora-solr-facet li {
+    width: 100% !important;
+}
+
+.plusminus {
+    float: unset !important;
+}

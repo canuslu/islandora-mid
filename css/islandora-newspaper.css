@@ -1,0 +1,41 @@
+/*
+ * CSS file for islandora-newspaper.tpl.php
+ */
+
+#islandora-newspaper-wrapper {
+    margin-top: 10px;
+}
+
+.islandora-newspaper-object {
+    margin: 0 !important;
+}
+
+.islandora-newspaper-content {
+    width: 100% !important;
+    border-radius: 0 !important;
+}
+
+.islandora-newspaper-content > ul {
+    margin-left: 0 !important;
+}
+
+.islandora-newspaper-content > ul > li {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    padding: 2px !important;
+}
+
+.islandora-newspaper-content > div > ul > li {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.islandora-newspaper-content > div > div {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 0 !important;
+}
+
+.islandora-newspaper-content > div > ul {
+    width: 25% !important;
+    margin-right: 0px !important;
+}
