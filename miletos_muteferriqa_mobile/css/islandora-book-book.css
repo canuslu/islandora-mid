@@ -1,0 +1,533 @@
+/*
+ * CSS file for islandora-book-book.tpl.php
+ */
+body {
+    overflow-y: scroll;
+}
+
+#page-header,
+.page-header {
+    display: none;
+}
+
+#navbar {
+    margin-bottom: 2px !important;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#navbar * {
+    max-height: 50px !important;
+}
+
+.main-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100vh - 50px);
+    position: absolute;
+    top: 52px !important;
+}
+
+.main-container>.row,
+.main-container>.row>.col-sm-12 {
+    max-height: 100% !important;
+    max-width: 100% !important;
+}
+
+.main-container>.row {
+    margin: 0 !important;
+    height: 100% !important;
+}
+
+.main-container>.row>.col-sm-12 {
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.breadcrumb {
+    height: 25px;
+    overflow-x: scroll !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    vertical-align: middle;
+    display: block ruby;
+    width: 100%;
+    margin-bottom: 0 !important;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+}
+
+.tabs--primary {
+    display: none;
+}
+
+.footer {
+    display: none;
+}
+
+.region {
+    position: absolute;
+    height: calc(100vh - 102px);
+    top: 49px;
+    width: 100% !important;
+}
+
+#block-system-main {
+    height: calc(100vh - 102px);
+}
+
+.solr-search-nav-links {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.solr-search-nav-link {
+    padding: 0 !important;
+}
+
+#bookReaderContainer {
+    height: 100% !important;
+}
+
+#islandora-solr-search-next-link {
+    width: 33% !important;
+    text-align: right;
+}
+
+#islandora-solr-search-prev-link {
+    width: 34% !important;
+    text-align: left;
+}
+
+#islandora-solr-search-return-link {
+    width: 33% !important;
+    text-align: center;
+}
+
+#BookReader,
+#book-viewer {
+    height: 100% !important;
+}
+
+#BRcontainer {
+    height: calc(100% - 32px) !important;
+}
+
+#BRnav {
+    height: 32px !important;
+    max-height: 32px !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    background-color: #f5f5f5 !important;
+    z-index: 1000000000000000000;
+}
+
+#BRnavCntlBtm {
+    display: none;
+}
+
+#BRpage {
+    display: none;
+}
+
+#BRnavpos {
+    padding-left: 80px !important;
+    padding-right: 40px !important;
+    height: 32px !important;
+    width: 100% !important;
+    position: absolute !important;
+    bottom: 0;
+}
+
+#BRpager {
+    height: 24px !important;
+    margin-top: 4px !important;
+    border-radius: 0 !important;
+}
+
+#BRpager .ui-slider-handle {
+    top: 6px !important;
+    width: 8px !important;
+    height: 8px !important;
+    max-height: unset !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-image: none !important;
+    background-color: rgb(33, 150, 243) !important;
+}
+
+#pagenum {
+    width: 80px !important;
+    display: block !important;
+    position: fixed !important;
+    top: unset !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: 24px !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    text-align: center;
+}
+
+#BRnavline {
+    top: unset !important;
+    bottom: 14px !important;
+}
+
+.searchin {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/searchin.png") !important;
+}
+
+.twopg {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/pages.png") !important;
+}
+
+.onepg {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/page.png") !important;
+}
+
+.thumb {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/thumb.png") !important;
+}
+
+.zoom_in {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoomin.png") !important;
+}
+
+.zoom_out {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoomout.png") !important;
+}
+
+#prev-book-search-match {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/prev.png") !important;
+}
+
+#next-book-search-match {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/next.png") !important;
+}
+
+.book_page {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoommodal.png") !important;
+}
+
+.metadata {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/info.png");
+}
+
+.similaritems {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/similar.png");
+}
+
+.manage {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/manage.png");
+}
+
+.flag_bookmark {
+    background-image: none !important;
+}
+
+.flag_bookmark .flag-action {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/bookmark.png") !important;
+}
+
+.flag_bookmark .unflag-action {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/bookmarked.png") !important;
+}
+
+.flag_bookmark a {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+.flag-wrapper {
+    width: 20% !important;
+    height: 48px !important;
+    position: absolute !important;
+}
+
+.flag-wrapper .flag {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: unset !important;
+    background-position-x: center !important;
+}
+
+#viewer-toolbar {
+    position: absolute;
+    bottom: 32px !important;
+    height: 96px;
+    width: 100%;
+    z-index: 1000;
+}
+
+#menu-bottom-toggler {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    bottom: 4px;
+    z-index: 1000;
+    border-radius: 0 !important;
+    background-color: #f5f5f5;
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/slider.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleY(-1);
+    -webkit-transform: : scaleY(-1);
+}
+
+#menu-bottom-object,
+#menu-bottom-viewer {
+    background-color: #666666;
+    list-style: none;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#menu-bottom-object li,
+#menu-bottom-viewer li {
+    height: 48px !important;
+    background-size: contain;
+    float: left;
+    background-position: unset !important;
+    background-position-x: center !important;
+}
+
+#menu-bottom-object li {
+    width: 20% !important;
+}
+
+#menu-bottom-viewer li {
+    width: 25% !important;
+}
+
+.modal-dialog {
+    width: auto !important;
+    margin: 10px !important;
+    height: calc(100vh - 20px) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #666666 !important;
+    height: 50px !important;
+}
+
+.modal-header button.close {
+    position: absolute;
+    top: 0;
+    right: 4px !important;
+}
+
+.modal-content {
+    height: 100% !important;
+}
+
+.modal-footer {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+
+.modal-footer button {
+    float: left;
+    border-radius: 0 !important;
+}
+
+.modal-body {
+    height: calc(100% - 150px) !important;
+    overflow-y: scroll;
+}
+
+.modal-title {
+    position: absolute !important;
+    top: 8px !important;
+    font-size: 20px !important;
+}
+
+#metadata-call,
+#mlt-call {
+    width: 50% !important;
+}
+
+#search-call {
+    width: 100% !important;
+}
+
+.islandora-metadata legend {
+    display: none !important;
+}
+
+.fieldset-wrapper {
+    display: block !important;
+}
+
+#pagemodal .modal-footer button {
+    float: left;
+    width: 50% !important;
+    margin: 0 !important;
+}
+
+#pagemodal #islandora-openseadragon {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #f5f5f5;
+}
+
+#pagemodal .modal-body {
+    overflow: hidden !important;
+}
+
+#pagemodal #openseadragon-menu {
+    height: 32px !important;
+    width: 100% !important;
+    z-index: 1000;
+    position: absolute;
+    bottom: 0 !important;
+    left: 0 !important;
+    background-color: #666666;
+    margin-bottom: 0 !important;
+    border: 0 !important;
+}
+
+#pagemodal #openseadragon-menu li {
+    width: 16.6% !important;
+    height: 32px !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#tabs-right-zoomin {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoomin.png");
+}
+
+#tabs-right-zoomout {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoomout.png");
+}
+
+#tabs-right-home {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/zoomreset.png");
+}
+
+#tabs-right-fullscreen {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/fullscreen.png");
+}
+
+#tabs-right-rotate-left {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/rotateleft.png");
+}
+
+#tabs-right-rotate-right {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/rotateright.png");
+}
+
+#tabs-right-highlight {
+    background-image: url("/sites/all/themes/miletos_muteferriqa_mobile/images/highlight.png");
+}
+
+#pagemodal .navigator {
+    display: none !important;
+}
+
+.menu-right-detail {
+    position: fixed;
+    top: 51px;
+    left: 0px;
+    z-index: 10000000000;
+    width: 100%;
+    height: 50px !important;
+}
+
+#on-screen-keyboard {
+    position: absolute;
+    width: 90%;
+    left: 0;
+    top: 60px;
+    margin-right: 10%;
+}
+
+#on-screen-keyboard .character {
+    width: 15%;
+    height: 40px;
+    float: right;
+    font-size: 20px;
+    padding: 0px !important;
+}
+
+#BRtoolbar {
+    height: 100%;
+    background-color: #e5e5e5;
+}
+
+#BRtoolbarbuttons {
+    width: 100%;
+    height: 50px;
+}
+
+#booksearch {
+    width: 100%;
+    height: 50px;
+}
+
+#booksearch a {
+    display: none;
+}
+
+#searchin-modal #textSrch {
+    height: 30px !important;
+    margin-left: 20px;
+    width: calc(100% - 70px);
+    padding-left: 10px;
+}
+
+#searchin-modal #btnSrch {
+    height: 30px;
+    width: 30px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-color: #2196f3 !important;
+    margin-left: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+.search {
+    background-image: url("/sites/all/themes/miletos_muteferriqa/images/pin.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    margin-left: -4px !important;
+    height: 12px !important;
+    top: unset !important;
+}
+
+.islandora-openseadragon-highlight {
+    background-color: rgba(0, 0, 255, 0.2);
+    transition: all !important;
+}
+
+.islandora-openseadragon-runtime-highlight {
+    background-image: url("/sites/all/themes/miletos_muteferriqa/images/pin.png");
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 27px;
+}

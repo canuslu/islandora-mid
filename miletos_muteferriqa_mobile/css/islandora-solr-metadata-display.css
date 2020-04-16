@@ -1,0 +1,14 @@
+/*
+ * CSS file for islandora-solr-metadata-display.tpl.php
+ */
+.islandora-inline-metadata dd {
+    width: 100% !important;
+    border: none !important;
+    padding-left: 0 !important;
+}
+
+.islandora-inline-metadata dt {
+    border: none;
+    border-bottom: 1px solid #666666;
+    width: 100%;
+}

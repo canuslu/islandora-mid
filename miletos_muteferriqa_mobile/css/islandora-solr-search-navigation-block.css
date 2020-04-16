@@ -1,0 +1,16 @@
+.solr-search-nav-links {
+    height: 24px;
+    background-color: #e5e5e5;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.solr-search-nav-links > div {
+    text-align: center;
+}
+
+.fa-chevron-right,
+.fa-chevron-left {
+    font-size: 12px !important;
+    color: #2196f3;
+}

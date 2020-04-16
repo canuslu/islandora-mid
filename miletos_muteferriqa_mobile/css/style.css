@@ -1,0 +1,39 @@
+/*
+ * Site-wide applicable CSS codes.
+ */
+body, html {
+    height: 100%;
+}
+
+#navbar {
+    margin-top: 0;
+    min-height: unset !important;
+    height: 50px !important;
+}
+
+#footer .footer-left img {
+    vertical-align: text-top;
+    height: 14px;
+}
+
+#footer {
+    width: 100%;
+}
+
+.footer {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+#footer-miletos-text {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-miletos {
+    text-align: center;
+}
