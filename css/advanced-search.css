@@ -1,0 +1,90 @@
+#islandora-solr-advanced-search-form {
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent !important;
+}
+
+.as-on-screen-keyboard-trigger {
+    position: absolute !important;
+    margin-top: 25px;
+    z-index: 100;
+}
+
+.as-search-help-trigger {
+    position: absolute !important;
+    margin-top: 72px;
+    z-index: 100;
+    margin-left: 1px;
+}
+
+#islandora-solr-advanced-search-form input[type=text] {
+    padding-left: 25px;
+    width: 100%;
+    box-shadow: none !important;
+    background-color: #e5e5e5;
+}
+
+#islandora-solr-advanced-terms button,
+.islandora-solr-advanced-controls button {
+    border-radius: 0 !important;
+    margin-bottom: 4px;
+}
+
+.footer {
+    z-index: 100;
+    background-color: white;
+}
+
+.islandora-solr-advanced-controls {
+    float: right;
+    padding-right: 24px;
+}
+
+.background-image-holder {
+    background-image: url("/sites/all/themes/miletos_muteferriqa/images/as_1.jpg");
+    opacity: 0.1;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 30px;
+    z-index: -2000;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: auto;
+}
+
+body, html {
+    min-height: 100%;
+    height: auto !important;
+}
+
+.form-select {
+    max-width: 197px;
+}
+
+.simple-holder {
+    position: relative;
+    padding: 0px;
+    width: 100% !important;
+}
+
+.submit-button-image {
+    margin-left: 4px;
+}
+
+#navbar .on-screen-keyboard-trigger {
+    position: absolute;
+    top: -3px !important;
+    margin-left: 0px !important;
+}
+
+#navbar .search-help-trigger {
+    position: absolute;
+    margin-left: 1px !important;
+    top: 44px !important;
+}
