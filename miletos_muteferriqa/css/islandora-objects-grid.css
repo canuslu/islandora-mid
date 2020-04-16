@@ -1,0 +1,24 @@
+/*
+ * CSS file for islandora-objects-grid.tpl.php
+ */
+
+.islandora-object {
+    width: 250px !important;
+}
+
+.islandora-object-thumb {
+    width: 200px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+}
+
+.islandora-object-thumb img {
+    width: 150px !important;
+    height: 200px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+}
+
+.islandora-object-caption {
+    text-align: center;
+}

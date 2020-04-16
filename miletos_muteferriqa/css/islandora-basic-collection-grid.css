@@ -1,0 +1,13 @@
+/*
+ * CSS file for islandora-basic-collection-grid.tpl.php
+ */
+
+.islandora-basic-collection-object {
+    min-height: 240px !important;
+    padding: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.islandora-basic-collection-object p {
+    margin-top: 0 !important;
+}
