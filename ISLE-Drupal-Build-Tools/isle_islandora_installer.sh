@@ -204,7 +204,7 @@ drush iabookreader-plugin
 
 echo "Clean caches to enable themes."
 cd /var/www/html/sites/all/themes
-ln -s /themes/* .
+cp -r /themes/* .
 drush cc all
 drush pm-enable -y miletos_muteferriqa
 drush pm-enable -y miletos_muteferriqa_mobile
