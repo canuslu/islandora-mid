@@ -189,6 +189,7 @@ drush -y -u 1 en username_enumeration_prevention
 drush -y -u 1 en variable
 drush -y -u 1 en views_conditional
 drush -y -u 1 en views_dependent_filters
+drush -y -u 1 en block_export_import
 
 drush -y -u 1 en islandora_access_override
 drush -y -u 1 en islandora_bulk_delete
