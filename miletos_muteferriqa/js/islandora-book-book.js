@@ -123,7 +123,7 @@ $(document).ready(function() {
         Drupal.settings.islandora_open_seadragon_viewer = "";
         Drupal.settings.islandoraOpenSeadragon = "";
 
-        $.get("https://" + window.location.host + "/zoom-islandora-object/" + ppid, function(data, status) {
+        $.get("http://" + window.location.host + "/zoom-islandora-object/" + ppid, function(data, status) {
             var viewer = new OpenSeadragon(data.settings.options);
             Drupal.settings.islandora_open_seadragon_viewer = viewer;
             Drupal.settings.islandoraOpenSeadragon = data.settings;

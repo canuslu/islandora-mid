@@ -10,7 +10,6 @@
     $module_path = drupal_get_path('module', 'islandora_openseadragon');
     $library_path = libraries_get_path('openseadragon');
     drupal_add_js("$library_path/openseadragon.js", array('weight' => -4));
-    drupal_add_js("$module_path/js/djtilesource.js", array('weight' => -3));
  ?>
 
 <div id="bookReaderContainer">
