@@ -91,6 +91,9 @@ projects[islandora_entity_bridge][download][url] = "https://github.com/btmash/is
 projects[islandora_social_metatags][download][url] = "https://github.com/Islandora-Labs/islandora_social_metatags.git"
   projects[islandora_social_metatags][download][branch] = "master"
 
+projects[search_autocomplete][download][url] = "https://github.com/canuslu/search_autocomplete.git"
+  projects[search_autocomplete][download][branch] = "mid"
+
 ; Libraries
 
 libraries[tuque][download][type] = "git"
